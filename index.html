@@ -62,7 +62,7 @@
         <h1 class="mb-5 text-center border-bottom border-warning">
           Ejercicios JS - Dom
         </h1>
-        <article>
+        <article class="mb-3">
           <h3>Ejercicio 1:</h3>
           <div class="container-fluid">
             <p class="border p-2">
@@ -78,13 +78,83 @@
             </p>
           </div>
           <div class="container mt-2">
-            <button id="iniciarJuego" class="btn btn-primary mt-3">Comenzar el juego</button>
-            <div id="juego" class="mt-4" style="display: none;">
-                <p>Ingresa un número entre 1 y 100:</p>
-                <input type="number" id="numeroIngresado" class="form-control w-50" placeholder="Escribe tu número" min="1" max="100">
-                <button id="enviar" class="btn btn-success mt-3">Enviar</button>
+            <button id="iniciarJuego" class="btn btn-primary mt-1">
+              Comenzar el juego
+            </button>
+            <div id="juego" class="mt-4" style="display: none">
+              <p>Ingresa un número entre 1 y 100:</p>
+              <input
+                type="number"
+                id="numeroIngresado"
+                class="form-control w-50"
+                placeholder="Escribe tu número"
+                min="1"
+                max="100"
+              />
+              <button id="enviar" class="btn btn-success mt-3">Enviar</button>
             </div>
-        </div>
+          </div>
+        </article>
+        <article class="mb-3">
+          <h3>Ejercicio 2:</h3>
+          <div class="container-fluid">
+            <p class="border p-2">
+              Crea una clase llamada Persona que siga las siguientes
+              condiciones:<br />
+              Sus propiedades son: nombre, edad, DNI, sexo (H hombre, M mujer),
+              peso y altura, año de nacimiento.<br />
+              Los métodos que se debe poder utilizar son:<br />
+              - mostrarGeneracion: este método debe mostrar un mensaje indicando a
+              qué generación pertenece la persona creada y cual es el rasgo
+              característico de esta generación.<br />- esMayorDeEdad: indica si
+              es mayor de edad, devuelve un mensaje indicando que la persona es
+              mayor de edad.<br />
+              - mostrarDatos: devuelve toda la información del objeto. <br />Luego
+              crea la interfaz necesaria para que el usuario pueda crear un
+              objeto persona, permitiendo ingresar las propiedades mediante un
+              formulario, también agregar los botones “mostrar generación”, es
+              “mayor de edad” e indicar en un alert el resultado de la función
+              correspondiente.
+            </p>
+          </div>
+          <div class="container mt-5">
+            <h2>Crear una Persona</h2>
+            <form id="formularioPersona" class="mb-3">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo (H/M):</label>
+                    <input type="text" id="sexo" class="form-control" maxlength="1">
+                </div>
+                <div class="form-group">
+                    <label for="peso">Peso (kg):</label>
+                    <input type="number" id="peso" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="altura">Altura (cm):</label>
+                    <input type="number" id="altura" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="anioNacimiento">Año de Nacimiento:</label>
+                    <input type="number" id="anioNacimiento" class="form-control">
+                </div>
+                <button type="button" id="crearPersona" class="btn btn-primary mt-3">Crear Persona</button>
+            </form>
+        
+            <button id="mostrarGeneracion" class="btn btn-info">Mostrar Generación</button>
+            <button id="esMayorDeEdad" class="btn btn-warning">Es Mayor de Edad</button>
+            <button id="mostrarDatos" class="btn btn-success">Mostrar Datos</button>
+        </div>      
         </article>
       </section>
     </main>
