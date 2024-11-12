@@ -1,4 +1,6 @@
-//EJERCICIO 1
+//--------------------------------------------------------------------------------
+//                                 EJERCICIO 1
+//--------------------------------------------------------------------------------
 let numero;
 
 document.getElementById("iniciarJuego").addEventListener("click", function () {
@@ -37,10 +39,9 @@ document.getElementById("enviar").addEventListener("click", function () {
 });
 
 //--------------------------------------------------------------------------------
-//ejercicio 2
-
+//                                 EJERCICIO 2
+//--------------------------------------------------------------------------------
 class Persona {
-  // Definición de propiedades privadas usando #
   #nombre;
   #edad;
   #dni;
@@ -58,8 +59,6 @@ class Persona {
     this.#altura = altura;
     this.#anioNacimiento = anioNacimiento;
   }
-
-  // Getters y Setters para cada propiedad privada
 
   get nombre() {
     return this.#nombre;
@@ -114,7 +113,7 @@ class Persona {
     this.#anioNacimiento = anioNacimiento;
   }
 
-  // Métodos de la clase
+  // Métodos
   mostrarGeneracion() {
     let generacion = "";
     let rasgoCaracteristico = "";
@@ -209,4 +208,43 @@ document.getElementById("mostrarDatos").addEventListener("click", function () {
   } else {
     alert("Primero debes crear una persona.");
   }
+});
+
+//--------------------------------------------------------------------------------
+//                                 EJERCICIO 3
+//--------------------------------------------------------------------------------
+
+document.getElementById("agregarTarea").addEventListener("click", function() {
+  // Obtener el valor del input de tarea
+  const tareaTexto = document.getElementById("tareaInput").value;
+
+  // Validar que el input no esté vacío
+  if (tareaTexto.trim() === "") {
+      alert("Por favor, ingresa una tarea.");
+      return;
+  }
+
+  // Crear un nuevo elemento de lista (li) y configurarlo
+  const tareaElemento = document.createElement("li");
+  tareaElemento.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+  tareaElemento.textContent = tareaTexto;
+
+  // Crear el botón de eliminación
+  const botonEliminar = document.createElement("button");
+  botonEliminar.classList.add("btn", "btn-danger", "btn-sm");
+  botonEliminar.textContent = "Eliminar";
+
+  // Agregar el botón de eliminación al elemento de la tarea
+  tareaElemento.appendChild(botonEliminar);
+
+  // Agregar la tarea a la lista
+  document.getElementById("listaTareas").appendChild(tareaElemento);
+
+  // Limpiar el input de tarea
+  document.getElementById("tareaInput").value = "";
+
+  // Evento para eliminar la tarea cuando se presiona el botón de eliminar
+  botonEliminar.addEventListener("click", function() {
+      tareaElemento.remove();
+  });
 });
