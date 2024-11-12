@@ -11,10 +11,10 @@ document.getElementById("iniciarJuego").addEventListener("click", function () {
   alert("El juego ha comenzado. ¡Adivina un número aleatorio entre 1 y 100!");
 });
 
-document.getElementById("enviar").addEventListener("click", function () {
-  const numeroIngresado = parseInt(
-    document.getElementById("numeroIngresado").value
-  );
+document.getElementById("formJuego").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+  
+  const numeroIngresado = parseInt(document.getElementById("numeroIngresado").value);
 
   if (isNaN(numeroIngresado)) {
     alert("Por favor, ingresa un número válido.");
@@ -24,19 +24,12 @@ document.getElementById("enviar").addEventListener("click", function () {
   if (numeroIngresado === numero) {
     alert("¡Felicidades! Adivinaste el número correcto: " + numero);
   } else if (numeroIngresado < numero) {
-    alert(
-      "El número mágico es mayor que " +
-        numeroIngresado +
-        ". Inténtalo de nuevo."
-    );
+    alert("El número mágico es mayor que " + numeroIngresado + ". Inténtalo de nuevo.");
   } else {
-    alert(
-      "El número mágico es menor que " +
-        numeroIngresado +
-        ". Inténtalo de nuevo."
-    );
+    alert("El número mágico es menor que " + numeroIngresado + ". Inténtalo de nuevo.");
   }
 });
+
 
 //--------------------------------------------------------------------------------
 //                                 EJERCICIO 2
